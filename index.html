@@ -30,19 +30,30 @@
         </nav>
     </header>
 
-    <!-- Spinner -->
-    <div class="w-100 d-flex justify-content-center mt-5 spinner d-none">
-        <div class="spinner-border text-warning mx-auto" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-    </div>
+
 
     <main class="">
+        <!-- Spinner -->
+        <div class="w-100 d-flex justify-content-center mt-5 spinner d-none">
+            <div class="spinner-border text-warning mx-auto" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <!-- Recommendation -->
+        <div class="w-75 mx-auto success px-5 d-none">
+            <h3 class="text-white text-opacity-50 bg-success text-center py-3 rounded-top w-100">Successful!</h3>
+        </div>
+        <!-- Recommendation -->
+        <div class="w-75 mx-auto error px-5 d-none">
+            <h3 class="text-white text-opacity-50 bg-danger text-center py-3 rounded-top w-100">Error, Recheck!</h3>
+        </div>
+
         <div
             class="row bg-white d-flex justify-content-around align-items-center mx-auto w-75 rounded-3 p-4 border mb-3 login_div d-none">
 
             <div class="w-50 col-lg-5">
-                <h3 class="w-100 text-center">Register</h3>
+                <h3 class="w-100 text-center">Student Login</h3>
                 <img src="./images/register_login.png" class="img-fluid  ">
             </div>
             <div class="w-50 col-lg-7">
@@ -111,35 +122,34 @@
 
         <!-- Register School -->
         <div
-        class="row bg-white d-flex justify-content-around align-items-center mx-auto w-75 rounded-3 p-4 border register_school_div d-none">
+            class="row bg-white d-flex justify-content-around align-items-center mx-auto w-75 rounded-3 p-4 border register_school_div d-none">
 
-        <div class="w-50 col-lg-5">
-            <h3 class="w-100 text-center">Register School</h3>
-            <img src="./images/register_login.png" class="img-fluid  ">
+            <div class="w-50 col-lg-5">
+                <h3 class="w-100 text-center">Register School</h3>
+                <img src="./images/register_login.png" class="img-fluid  ">
+            </div>
+            <div class="col-lg-6 col col-sm ">
+                <div class="mb-3">
+                    <label for="schoolName" class="form-label">School Name</label>
+                    <input type="text" class="form-control " id="schoolName" aria-describedby="emailHelp">
+                    <span id="schoolNameErr"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="schoolEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control " id="schoolEmail" aria-describedby="emailHelp">
+                    <span id="schoolEmailErr"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="schoolPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control " id="schoolPassword">
+                    <span id="schoolPasswordErr"></span>
+                </div>
+                <button type="button" id="submit" class="btn btn-warning mt-3">Submit</button>
+                <p class="mt-2 text-dark already-copyright">Have an account? <a href="#"
+                        class="text-warning">Register</a>
+                </p>
+            </div>
         </div>
-        <div class="col-lg-6 col col-sm ">
-            <div class="mb-3">
-                <label for="schoolName" class="form-label">School Name</label>
-                <input type="text" class="form-control " id="schoolName"
-                    aria-describedby="emailHelp">
-                <span id="schoolNameErr"></span>
-            </div>
-            <div class="mb-3">
-                <label for="schoolEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control " id="schoolEmail"
-                    aria-describedby="emailHelp">
-                <span id="schoolEmailErr"></span>
-            </div>
-            <div class="mb-3">
-                <label for="schoolPassword" class="form-label">Password</label>
-                <input type="password" class="form-control " id="schoolPassword">
-                <span id="schoolPasswordErr"></span>
-            </div>
-            <button type="button" id="submit" class="btn btn-warning mt-3">Submit</button>
-            <p class="mt-2 text-dark already-copyright">Have an account? <a href="#" class="text-warning">Register</a>
-            </p>
-        </div>
-    </div>
     </main>
     <footer>
 
