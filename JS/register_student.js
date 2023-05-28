@@ -11,48 +11,62 @@ regStud.onclick = () => {
   }, 1000);
 };
 
-let first_name = document.getElementById('exampleInputName1');
-let last_name = document.getElementById('exampleInputName2');
-let studenteEmail = document.getElementById('exampleInputEmail1');
-let studentSchool = document.getElementById('school_options');
-let studentPassword = document.getElementById('exampleInputPassword1');
-let reg_student_submit = document.getElementById('RegStudentsubmit');
+let first_name = document.getElementById("exampleInputName1");
+let last_name = document.getElementById("exampleInputName2");
+let studenteEmail = document.getElementById("exampleInputEmail1");
+let studentSchool = document.getElementById("school_options");
+let studentPassword = document.getElementById("exampleInputPassword1");
+let reg_student_submit = document.getElementById("RegStudentsubmit");
 
-function validate() {
-   if (
-     !first_name.value || !last_name.value || !studenteEmail.value || !studentSchool.value ||  !studentPassword.value
-   ) {
-      alert("chaii");
-     error();
-     return;
-   } else {
-     addStudent();
-   }
- }
- 
- function error() {
-   errormsg.classList.remove("d-none");
-   setTimeout(() => {
-     errormsg.classList.add("d-none");
-   }, 1500);
- }
- 
- function success() {
-   successmsg.classList.remove("d-none");
-   setTimeout(() => {
-     successmsg.classList.add("d-none");
-     document.querySelector(".register_student_div").classList.add("d-none");
-   }, 2000);
- }
+// add school options to select box
+let allSchools = window.JSON.parse(localStorage.getItem("schools"));
+allSchools.forEach((school) => {
+  let options = document.getElementById("school_options");
+  let option = document.createElement("option");
+  option.value = school.schoolName;
+  option.text = school.schoolName;
+  options.add(option);
+});
 
- class Student {
-  constructor(schoolname, email, address, password) {
-    this.schoolname = schoolname;
+function validatestudent() {
+  if (
+    !first_name.value ||
+    !last_name.value ||
+    !studenteEmail.value ||
+    !studentSchool.value ||
+    !studentPassword.value
+  ) {
+    alert("chaii");
+    error();
+    return;
+  } else {
+    addStudent();
+  }
+}
+
+function error() {
+  errormsg.classList.remove("d-none");
+  setTimeout(() => {
+    errormsg.classList.add("d-none");
+  }, 1500);
+}
+
+function success() {
+  successmsg.classList.remove("d-none");
+  setTimeout(() => {
+    successmsg.classList.add("d-none");
+    document.querySelector(".register_student_div").classList.add("d-none");
+  }, 2000);
+}
+
+class Student {
+  constructor(first_name, last_name, email, schoolname, password) {
+    this.first_name = first_name;
+    this.last_name = last_name;
     this.email = email;
-    this.address = address;
+    this.schoolname = schoolname;
     this.password = password;
   }
-
 }
 
 // let students = [
@@ -85,14 +99,14 @@ function addStudent() {
 }
 
 function clearForm() {
-   first_name.value = "";
-   last_name.value = "";
-   studenteEmail.value = "";
+  first_name.value = "";
+  last_name.value = "";
+  studenteEmail.value = "";
   studentSchool.value = "";
   studentPassword.value = "";
 }
 
 reg_student_submit.addEventListener("click", (e) => {
   e.preventDefault();
-  validate();
+  validatestudent();
 });

@@ -1,10 +1,10 @@
 let logStud = document.getElementById("login_student_btn");
 let email = document.getElementById("inputEmail");
 let password = document.getElementById("inputPassword");
-let btn = document.querySelector(".btn");
 let spinner = document.querySelector(".spinner");
 let successmsg = document.querySelector(".success");
 let errormsg = document.querySelector(".error");
+let student_log_btn = document.getElementById("student_log_btn");
 
 logStud.onclick = () => {
   spinner.classList.remove("d-none");
@@ -17,11 +17,11 @@ logStud.onclick = () => {
   }, 1000);
 };
 
-document.getElementById("submit").onclick = () => {
-  validate();
+student_log_btn.onclick = () => {
+  validatelogin();
 };
 
-function validate() {
+function validatelogin() {
   if (
     !document.getElementById("inputEmail").value ||
     !document.getElementById("inputPassword").value
@@ -40,7 +40,7 @@ function error() {
   }, 1500);
 }
 
-function success() {
+function loginsuccess() {
   successmsg.classList.remove("d-none");
   setTimeout(() => {
     successmsg.classList.add("d-none");
@@ -49,20 +49,17 @@ function success() {
 }
 
 function authourize() {
-  let obj = JSON.parse(localStorage.getItem("students"));
+  let obj = JSON.parse(window.localStorage.getItem("students"));
   const authUser = obj.find(
-    (user) => user.Email == email.value && user.Password == password.value
+    (user) => user.email == email.value && user.password == password.value
   );
   console.log(authUser);
+  localStorage.setItem("loggedIn", JSON.stringify(authUser));
 
   if (authUser) {
-    success();
+    loginsuccess();
   } else {
     alert("Unauthorised");
     return;
   }
 }
-
-btn.addEventListener("click", () => {
-  // validate();
-});

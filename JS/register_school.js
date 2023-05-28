@@ -8,19 +8,9 @@ regSchool.onclick = () => {
   setTimeout(() => {
     document.querySelector(".register_school_div").classList.remove("d-none");
     document.querySelector(".spinner").classList.add("d-none");
-    // validateLogin();
   }, 1000);
 };
 
-// class School {
-//   constructor(schoolname, email, address, password) {
-//     this.schoolname = schoolname;
-//     this.email = email;
-//     this.address = address;
-//     this.password = password;
-//   }
-
-// }
 
 let regschoolbtn = document.getElementById("regSchoolSubmit");
 let regschool_name = document.getElementById("schoolName");
@@ -67,14 +57,14 @@ function success() {
 // ];
 // localStorage.setItem('schools', JSON.stringify(schools));
 
-// class School {
-//    constructor(schoolName, schoolEmail, schoolAddress, schoolPassword){
-//        this.schoolName = schoolName;
-//        this.schoolEmail = schoolEmail;
-//        this.schoolAddress = schoolAddress;
-//        this.schoolPassword = schoolPassword;
-//    }
-// }
+class School {
+   constructor(schoolName, schoolEmail, schoolAddress, schoolPassword){
+       this.schoolName = schoolName;
+       this.schoolEmail = schoolEmail;
+       this.schoolAddress = schoolAddress;
+       this.schoolPassword = schoolPassword;
+   }
+}
 
 function addSchool() {
   let school = new School(
