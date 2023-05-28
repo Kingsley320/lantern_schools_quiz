@@ -12,14 +12,16 @@
     <script src="./JS/index.js" defer></script>
     <script src="./JS/register_student.js" defer></script>
     <script src="./JS/register_school.js" defer></script>
+    <script src="./JS/home.js" defer></script>
     <title>LOGIN</title>
 </head>
 
 <body class="bg-light ">
-    <header class="border border-bottom position-sticky mb-3 bg-white">
+    <header class="border border-bottom position-sticky bg-white">
         <nav class="nav navbar d-flex justify-content-between mx-5">
             <div class="d-flex">
-                <img src="./images/oil_lamp_yellow.png" alt="logo" class="img-fluid" style="height:50px">
+                <a href="./index.html"><img src="./images/oil_lamp_yellow.png" alt="logo" class="img-fluid"
+                        style="height:50px"></a>
                 <span class="text-warning fs-5 align-self-end ">Lantern Schools</span>
             </div>
             <div>
@@ -40,17 +42,18 @@
             </div>
         </div>
 
-        <!-- Recommendation -->
-        <div class="w-75 mx-auto success px-5 d-none">
+        <!-- Success -->
+        <div class="w-75 mx-auto success px-5 mt-4 d-none">
             <h3 class="text-white text-opacity-50 bg-success text-center py-3 rounded-top w-100">Successful!</h3>
         </div>
-        <!-- Recommendation -->
-        <div class="w-75 mx-auto error px-5 d-none">
+        <!-- Error -->
+        <div class="w-75 mx-auto error px-5 mt-4 d-none">
             <h3 class="text-white text-opacity-50 bg-danger text-center py-3 rounded-top w-100">Error, Recheck!</h3>
         </div>
 
+        <!-- Login -->
         <div
-            class="row bg-white d-flex justify-content-around align-items-center mx-auto w-75 rounded-3 p-4 border mb-3 login_div d-none">
+            class="row bg-white d-flex justify-content-around align-items-center mx-auto w-75 rounded-3 p-4 border mb-5 mt-5 login_div d-none">
 
             <div class="w-50 col-lg-5">
                 <h3 class="w-100 text-center">Student Login</h3>
@@ -69,14 +72,15 @@
                         <input type="password" name="password" class="form-control password" id="inputPassword">
                     </div>
                 </div>
-                <button type="button" id="submit" class="btn btn-warning mt-3">Login</button>
-                <p class="mt-2 text-dark already-copyright">New here? <a href="#" class="text-warning ms-1">Register</a>
+                <button type="button" id="student_log_btn" class="btn btn-warning mt-3">Login</button>
+                <!-- <p class="mt-2 text-dark already-copyright">New here? <a href="#" class="text-warning ms-1">Register</a> -->
                 </p>
             </div>
         </div>
 
+        <!-- Register Student -->
         <div
-            class="row bg-white d-flex justify-content-around align-items-center mx-auto w-75 rounded-3 p-4 border register_student_div d-none">
+            class="row bg-white d-flex justify-content-around align-items-center mx-auto w-75 rounded-3 p-4 border register_student_div mt-5 mb-5 d-none">
 
             <div class="w-50 col-lg-5 col">
                 <h3 class="w-100 text-center">Register Student</h3>
@@ -105,7 +109,7 @@
                     <label for="school_options" class="form-label">Pick School</label>
                     <select name="" id="school_options" class="form-select inputErr">
                         <option value="">School</option>
-                        <option value="rework academy">Rework Academy</option>
+                        <option value="rework academy">Rework Academy.</option>
                     </select>
                     <span id="SchoolErr"></span>
                 </div>
@@ -114,15 +118,15 @@
                     <input type="password" class="form-control inputErr" id="exampleInputPassword1">
                     <span id="passwrdErr"></span>
                 </div>
-                <button type="button" id="submit" class="btn btn-warning mt-3">Submit</button>
-                <p class="mt-2 text-dark already-copyright">Have an account? <a href="#" class="text-warning">Login</a>
+                <button type="button" id="RegStudentsubmit" class="btn btn-warning mt-3">Submit</button>
+                <!-- <p class="mt-2 text-dark already-copyright">Have an account? <a href="#" class="text-warning">Login</a> -->
                 </p>
             </div>
         </div>
 
         <!-- Register School -->
         <div
-            class="row bg-white d-flex justify-content-around align-items-center mx-auto w-75 rounded-3 p-4 border register_school_div d-none">
+            class="row bg-white d-flex justify-content-around align-items-center mx-auto w-75 rounded-3 p-4 border register_school_div mt-5 mb-5 d-none">
 
             <div class="w-50 col-lg-5">
                 <h3 class="w-100 text-center">Register School</h3>
@@ -132,28 +136,116 @@
                 <div class="mb-3">
                     <label for="schoolName" class="form-label">School Name</label>
                     <input type="text" class="form-control " id="schoolName" aria-describedby="emailHelp">
-                    <span id="schoolNameErr"></span>
                 </div>
                 <div class="mb-3">
                     <label for="schoolEmail" class="form-label">Email address</label>
                     <input type="email" class="form-control " id="schoolEmail" aria-describedby="emailHelp">
-                    <span id="schoolEmailErr"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="schoolAddress" class="form-label">School address</label>
+                    <input type="text" class="form-control " id="schoolAddress" aria-describedby="textHelp">
                 </div>
                 <div class="mb-3">
                     <label for="schoolPassword" class="form-label">Password</label>
                     <input type="password" class="form-control " id="schoolPassword">
-                    <span id="schoolPasswordErr"></span>
                 </div>
-                <button type="button" id="submit" class="btn btn-warning mt-3">Submit</button>
-                <p class="mt-2 text-dark already-copyright">Have an account? <a href="#"
+                <button type="button" id="regSchoolSubmit" class="btn btn-warning mt-3">Submit</button>
+                <!-- <p class="mt-2 text-dark already-copyright">Have an account? <a href="#"
                         class="text-warning">Register</a>
-                </p>
+                </p> -->
             </div>
         </div>
-    </main>
-    <footer>
+        <!-- End Register School -->
 
-    </footer>
+
+        <!-- Home section -->
+        <section class="">
+            <div class=" timer-div pt-5 text-start">
+                <h2 class="ms-5 mt-5">Quiz starts in:</h2>
+
+                <div class="w-50 d-flex gap-3 text-center pt-5 fs-1 mb-5 ms-5">
+                    <div>
+                        <h2 id="timer-text">Days</h2>
+                        <h2 class="container-day"></h2>
+                    </div>
+                    <div>
+                        <h2 id="timer-text">Hours</h2>
+                        <h2 class="container-hour"></h2>
+                    </div>
+                    <div>
+                        <h2 id="timer-text">Minutes</h2>
+                        <h2 class="container-minute"></h2>
+                    </div>
+                    <div>
+                        <h2 id="timer-text">Seconds</h2>
+                        <h2 class="container-second"></h2>
+                    </div>
+                </div>
+                <button id="quiz_btn" class="btn btn-warning ms-5 ">Start Quiz</button>
+
+            </div>
+            </div>
+
+        </section>
+
+        <div class="container">
+            <footer class="py-5">
+                <div class="row">
+                    <div class="col-2">
+                        <h5>Links</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-2">
+                        <h5>Socials</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Twitter</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">LinkedIn</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Instagram</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Whatsapp</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Email</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 offset-1">
+                        <form>
+                            <h5>Subscribe to our newsletter</h5>
+                            <p>Monthly digest of whats new and exciting from us.</p>
+                            <div class="d-flex w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                                <button class="btn btn-warning" type="button">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between py-4 my-4 border-top">
+                    <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#twitter" />
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#instagram" />
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#facebook" />
+                                </svg></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+
+
+    </main>
+
 
 </body>
 
