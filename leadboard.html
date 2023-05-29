@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css.map">
+    <script src="./JS/bootstrap.bundle.min.js" defer></script>
+    <script src="./JS/leadboard.js" defer></script>
+    <script src="./JS/logout.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+        <header class="border border-bottom position-sticky bg-white">
+            <nav class="nav navbar d-flex justify-content-between mx-5">
+                <div class="d-flex">
+                    <a href="./index.html"><img src="./images/oil_lamp_yellow.png" alt="logo" class="img-fluid"
+                            style="height:50px"></a>
+                    <span class="text-warning fs-5 align-self-end ">Lantern Schools</span>
+                </div>
+                <div>
+                    <a class="btn btn-warning" href="./index.html" id="reg_school_btn">Register School</a>
+                    <a class="btn btn-warning" href="./index.html" id="reg_student_btn">Register Student</a>
+                    <a class="btn btn-warning " href="./index.html" id="logout_student_btn">Logout</a>
+                </div>
+            </nav>
+        </header>
+        <main class="mb-4">
+
+            <div class="container  align-items-center h-100 rounded border border-2 border-warning my-5 py-4 px-4 ">
+                <div class=" d-flex justify-content-center mb-2">
+                    <h3 class="text-decoration-underline">Leaderboard</h3>
+                </div id="leaderboard">
+                <div>
+                    <table class="table table-warning">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                                <th>School</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-warning " id="tbody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+        <div class="container">
+            <footer class="py-5">
+                <div class="row">
+                    <div class="col-2">
+                        <h5>Links</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-2">
+                        <h5>Socials</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Twitter</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">LinkedIn</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Instagram</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Whatsapp</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Email</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 offset-1">
+                        <form>
+                            <h5>Subscribe to our newsletter</h5>
+                            <p>Monthly digest of whats new and exciting from us.</p>
+                            <div class="d-flex w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                                <a class="btn btn-warning" type="a">Subscribe</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between py-4 my-4 border-top">
+                    <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#twitter" />
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#instagram" />
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#facebook" />
+                                </svg></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </body>
+</body>
+
+</html>
