@@ -24,7 +24,7 @@ body{
     margin-bottom: 200px;
 }
 
-a:hover{
+.a:hover{
     background-color: #ffc107;
     color: black;
     
