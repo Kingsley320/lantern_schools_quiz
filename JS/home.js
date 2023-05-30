@@ -1,9 +1,10 @@
 let timeRemaining = 0;
 const countdown = () => {
-  const countDate = new Date("May 30, 2023, 00:00:00").getTime();
+  const countDate = new Date("May 31, 2023, 00:00:00").getTime();
   const now = new Date().getTime();
   const gap = countDate - now;
   timeRemaining = gap;
+  localStorage.setItem('timeremaining', gap);
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
@@ -42,11 +43,12 @@ const countdown = () => {
 setInterval(countdown, 1000);
 
 document.getElementById("quiz_btn").onclick = () => {
-  if (timeRemaining > 86400000) {
-    // alert("You have to pay late registration fee of #5000");
-    confirm("You have to pay late registration fee of #5000");
-    if (confirm) {
-      setTimeout(location.href = "./quiz.html", 2000);
+  if (timeRemaining < 86400000) {
+    const latereg = confirm("You have to pay late registration fee of #5000");
+    if (latereg) {
+      localStorage.getItem('loggedIn') ?  location.href = "./quiz.html" : alert('log in')
+    } else {
+      return;
     }
   }
 };
