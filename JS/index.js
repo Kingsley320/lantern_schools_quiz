@@ -59,7 +59,7 @@ function authourize() {
   if (authUser) {
     loginsuccess();
   } else {
-    alert("Unauthorised");
+    error();
     return;
   }
 }
