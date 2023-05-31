@@ -69,17 +69,6 @@ class Student {
   }
 }
 
-// let students = [
-//   {
-//     first_name: "kingsley",
-//     last_name: "owolabi",
-//     Email: "kingsley@gmail.com",
-//     School: "Rework Academy",
-//     Password: "password",
-//   },
-// ];
-// localStorage.setItem("students", JSON.stringify(students));
-
 function addStudent() {
   let student = new Student(
     first_name.value,
