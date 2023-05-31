@@ -1,6 +1,19 @@
 let regSchool = document.getElementById("reg_school_btn");
 
 regSchool.onclick = () => {
+  if (parseInt(localStorage.getItem("timeremaining")) < 86400000) {
+    const latereg = confirm("You have to pay late registration fee of #5000");
+    if (latereg) {
+      regSchoolFlow();
+    } else {
+      return;
+    }
+  } else {
+    regSchoolFlow();
+  }
+};
+
+function regSchoolFlow() {
   document.querySelector(".spinner").classList.remove("d-none");
   document.querySelector(".register_student_div").classList.add("d-none");
   document.querySelector(".login_div").classList.add("d-none");
@@ -9,8 +22,7 @@ regSchool.onclick = () => {
     document.querySelector(".register_school_div").classList.remove("d-none");
     document.querySelector(".spinner").classList.add("d-none");
   }, 1000);
-};
-
+}
 
 let regschoolbtn = document.getElementById("regSchoolSubmit");
 let regschool_name = document.getElementById("schoolName");
@@ -47,23 +59,13 @@ function success() {
   }, 2000);
 }
 
-// let schools = [
-//    {
-//       "schoolname": "Rework Academy",
-//       "email": "reworkacademy.edu.ng",
-//       "address": "plot c13, wuse, Durumi, Abuja",
-//       "password": "reworkpass"
-//    }
-// ];
-// localStorage.setItem('schools', JSON.stringify(schools));
-
 class School {
-   constructor(schoolName, schoolEmail, schoolAddress, schoolPassword){
-       this.schoolName = schoolName;
-       this.schoolEmail = schoolEmail;
-       this.schoolAddress = schoolAddress;
-       this.schoolPassword = schoolPassword;
-   }
+  constructor(schoolName, schoolEmail, schoolAddress, schoolPassword) {
+    this.schoolName = schoolName;
+    this.schoolEmail = schoolEmail;
+    this.schoolAddress = schoolAddress;
+    this.schoolPassword = schoolPassword;
+  }
 }
 
 function addSchool() {
