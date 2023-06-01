@@ -166,13 +166,21 @@ function getOptions() {
 }
 getOptions();
 
+let pointCounter = document.querySelector("#percent");
+
 document.getElementById("submit_quiz").addEventListener("click", () => {
-  let percent = ((point/10) * 100)+ "%";
+  cummulatePoints();
+});
+
+function cummulatePoints() {
+    let percent = ((point/10) * 100)+ "%";
+
+  console.log(percent);
   document.querySelector(".quiz_div").classList.add("d-none");
   document.querySelector(".result_div").classList.remove("d-none");
-  document.querySelector("percent").innerText = percent;
+  pointCounter.innerHTML += percent;
   addToLead();
-});
+}
 
 class Student {
   constructor(studFName, studScore, studSchool) {
@@ -196,3 +204,18 @@ function addToLead() {
   studentArr.push(student);
   localStorage.setItem("leaderboard", JSON.stringify(studentArr));
 }
+
+
+function Time() {
+    let seconds = 120;
+    let time = document.getElementById("quiz_time");
+    const interval = setInterval(() => {
+      seconds--;
+      if (seconds <= 0) {
+        clearInterval(interval);
+        cummulatePoints();
+      }
+      time.innerHTML = seconds;
+    }, 1000);
+}
+Time();
