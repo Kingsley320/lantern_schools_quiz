@@ -93,6 +93,7 @@ function clearForm() {
   studenteEmail.value = "";
   studentSchool.value = "";
   studentPassword.value = "";
+  document.querySelector(".register_student_div").classList.add("d-none");
 }
 
 reg_student_submit.addEventListener("click", (e) => {
