@@ -50,5 +50,8 @@ document.getElementById("quiz_btn").onclick = () => {
     } else {
       return;
     }
+  }else{
+    localStorage.getItem('loggedIn') ?  location.href = "./quiz.html" : alert('log in');
+    document.querySelector(".login_div").classList.remove("d-none");
   }
 };
