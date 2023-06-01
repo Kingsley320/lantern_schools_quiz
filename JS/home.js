@@ -1,6 +1,6 @@
 let timeRemaining = 0;
 const countdown = () => {
-  const countDate = new Date("May 31, 2023, 00:00:00").getTime();
+  const countDate = new Date("December 31, 2023, 00:00:00").getTime();
   const now = new Date().getTime();
   const gap = countDate - now;
   timeRemaining = gap;
@@ -11,7 +11,7 @@ const countdown = () => {
   const day = hour * 24;
 
   let regDay = Math.floor(gap / day);
-  if (regDay.toString().length != 2) {
+  if (regDay.toString().length != 2 && regDay.toString().length < 2 ) {
     regDay = "0" + regDay;
   } else {
   }
